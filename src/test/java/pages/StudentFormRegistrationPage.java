@@ -1,16 +1,20 @@
 package pages;
 
+import com.github.javafaker.Faker;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class StudentFormRegistrationPage {
-    String firstName = "Egor",
-            lastName = "Alexov",
-            email = "aa@aa.com",
+    Faker faker = new Faker();
+
+    String firstName = faker.name().firstName(),
+            lastName = faker.name().lastName(),
+            email = faker.internet().emailAddress(),
             gender = "Other",
-            mobile = "1234567890",
+            mobile = faker.numerify("##########"),
             monthOfBirth = "May",
             yearOfBirth = "1988",
             dayOfBirth = "10",
@@ -21,7 +25,7 @@ public class StudentFormRegistrationPage {
             hobby2 = "Reading",
             hobby3 = "Music",
             picture = "1.jpg",
-            currentAddress = "Montenegro 123",
+            currentAddress = faker.address().fullAddress(),
             state = "Uttar Pradesh",
             city = "Merrut";
 
