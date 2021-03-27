@@ -12,8 +12,9 @@ public class StudentFormRegistrationTest {
     static void setup() {
         Configuration.startMaximized = true;
     }
+
     @Test
-    void AutomationPractiseFormTest(){
+    void automationPractiseFormTest(){
         studentFormRegistrationPage.openPage();
         studentFormRegistrationPage.fillForm();
         studentFormRegistrationPage.checkData();
